@@ -21,7 +21,7 @@ H: $h24h | L: $l24h\n
 24h changed: $price_24h_percent%\n
 7d changed: $price_7d_percent%\n
 \n
-Cronjob at: https://github.com/duythinht/crontab/"
+`Cronjob at: https://github.com/duythinht/crontab/`"
 EOF
     echo $message
 }
@@ -42,7 +42,7 @@ H: $h24h | L: $l24h\n
 24h changed: $price_24h_percent%\n
 7d changed: $price_7d_percent%\n
 \n
-Cronjob at: https://github.com/duythinht/crontab/"
+`Cronjob at: https://github.com/duythinht/crontab/`"
 EOF
     echo $message
 }

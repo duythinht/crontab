@@ -8,6 +8,7 @@ curl -X POST \
 {
     "chat_id": "$1", 
     "text": "$2",
+    "parse_mode": "markdown",
     "disable_notification": true
 }
 EOF
