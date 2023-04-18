@@ -1,7 +1,7 @@
 
 
 function chatgpt.fmt.message { #data
-    __chatgpt_build_message "$1" | jq -R '.choices[0].message.content'
+    __chatgpt_build_message "$1" | jq .choices[0].message.content -r
 }
 
 function __chatgpt_build_message { #data
