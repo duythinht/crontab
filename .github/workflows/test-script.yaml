@@ -17,7 +17,7 @@ jobs:
         auto-start: "false"
     - run: ./jobs/ronin-notify.sh
     env:
-      TELEGRAM_CHAT_ID: '-999154067' # Anh DAP CHAI TEST
+      TELEGRAM_CHAT_ID: '251602273' # Anh DAP CHAI TEST
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       REDIS_ADDR: ${{ secrets.REDIS_ADDR }}
       NOTIFY_PERCENT: '0.0'

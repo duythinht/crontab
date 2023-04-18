@@ -14,6 +14,8 @@ current_price=$(coin.data.current_price "$data")
 
 message=$(chatgpt.fmt.message "$data")
 
+echo $message
+
 for id in $(echo $TELEGRAM_CHAT_ID | tr -d ' ' | tr "," "\n")
 do
     telegram.send_message $id "$message"
