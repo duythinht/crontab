@@ -6,6 +6,7 @@ source 'lib/coin.sh'
 source 'lib/telegram.sh'
 source 'lib/math.sh'
 source 'lib/state.sh'
+source 'lib/chatgpt.sh'
 
 data=$(coin.get "ronin")
 
@@ -22,9 +23,12 @@ last_price_change_percent=$(math.percent $last_price $current_price)
 
 if [[ -z $(math.gt $last_price_change_percent $NOTIFY_PERCENT) ]]
 then
-    message=$(coin.fmt.notify_price "$data")
+    #chatgpt.fmt.message "$data"
+    message=$(chatgpt.fmt.message "$data")
     for id in $(echo $TELEGRAM_CHAT_ID | tr -d ' ' | tr "," "\n")
     do
+        echo "send message..."
+        echo "$message"
         telegram.send_message $id "$message"
         echo "message has been sent to $id"
     done

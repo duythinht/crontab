@@ -6,6 +6,7 @@ source 'lib/coin.sh'
 source 'lib/telegram.sh'
 source 'lib/math.sh'
 source 'lib/state.sh'
+source 'lib/chatgpt.sh'
 
 data=$(coin.get "ronin")
 

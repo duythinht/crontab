@@ -22,3 +22,4 @@ jobs:
       REDIS_ADDR: ${{ secrets.REDIS_ADDR }}
       NOTIFY_PERCENT: '0.0'
       LAST_PRICE_KEY: 'ronin:price:bot:last'
+      OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}

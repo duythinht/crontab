@@ -17,3 +17,4 @@ jobs:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       REDIS_ADDR: ${{ secrets.REDIS_ADDR }}
       LAST_PRICE_KEY: 'ronin:price:bot:last'
+      OPENAI_API_KEY: ${{secrets.OPENAI_API_KEY}}
