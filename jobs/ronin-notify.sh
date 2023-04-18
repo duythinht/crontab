@@ -12,7 +12,7 @@ data=$(coin.get "ronin")
 
 current_price=$(coin.data.current_price "$data")
 
-message=$(chatgpt.fmt.message "$data")
+message=$(coin.fmt.notify_price "$data")
 
 echo $message
 
