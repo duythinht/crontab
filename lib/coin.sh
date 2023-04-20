@@ -21,7 +21,7 @@ H: $h24h | L: $l24h\n
 1h: $price_1h_percent%\n
 24h: $price_24h_percent%\n
 7d: $price_7d_percent%\n
-Volume: $volume
+Volume: $(printf "%'.2f" $volume)
 \n"
 EOF
     echo $message
@@ -43,7 +43,7 @@ H: $h24h | L: $l24h\n
 1h: $price_1h_percent%\n
 24h: $price_24h_percent%\n
 7d: $price_7d_percent%\n
-Volume: $volume
+Volume: $(printf "%'.2f" $volume)
 \n
 EOF
     echo $message
