@@ -18,8 +18,6 @@ message=$(coin.fmt.notify_price "$data")
 
 echo $message
 
-exit 1
-
 for id in $(echo $TELEGRAM_CHAT_ID | tr -d ' ' | tr "," "\n")
 do
     telegram.send_message $id "$message"
