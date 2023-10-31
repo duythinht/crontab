@@ -23,7 +23,7 @@ last_price_change_percent=$(math.percent $last_price $current_price)
 
 echo "last price changed: $last_price_change_percent"
 
-if [[ -z $(math.gt $last_price_change_percent $NOTIFY_PERCENT) ]]
+if math.gt $last_price_change_percent $NOTIFY_PERCENT
 then
     message=$(coin.fmt.notify_price_by_percent "$data" "$last_price_change_percent" )
     for id in $(echo $TELEGRAM_CHAT_ID | tr -d ' ' | tr "," "\n")

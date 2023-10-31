@@ -1,10 +1,7 @@
 #!/bin/bash
 
 function math.gt { # f1, f2
-    python3 - <<EOF
-if $1 < $2:
-    print("no")
-EOF
+    [ 1 -eq $(echo "$1 > $2" | bc -l) ]
 }
 
 function math.percent { # f1, f2

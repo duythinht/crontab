@@ -21,7 +21,7 @@ fi
 
 last_price_change_percent=$(math.percent $last_price $current_price)
 
-if [[ -z $(math.gt $last_price_change_percent $NOTIFY_PERCENT) ]]
+if math.gt $last_price_change_percent $NOTIFY_PERCENT
 then
     #chatgpt.fmt.message "$data"
     message=$(chatgpt.fmt.message "$data")
