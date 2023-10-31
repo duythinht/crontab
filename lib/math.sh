@@ -5,9 +5,5 @@ function math.gt { # f1, f2
 }
 
 function math.percent { # f1, f2
-   python3 - <<EOF
-per = abs(($1/$2 - 1.0) * 100)
-f = '{:.2f}'.format(per)
-print(f)
-EOF
+   printf "%.4f" $(echo "abs(($1 / $2 - 1.0) * 100)" | bc -l)
 }
