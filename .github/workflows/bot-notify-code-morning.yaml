@@ -1,0 +1,17 @@
+name: "Slack notify webu code at morning"
+on:
+  schedule:
+  - cron: "0 2 * * *" # 2:00 UTC to UTC+7 = 9:00
+
+jobs:
+  notify-ronin-at-time-gfbaby:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: shogo82148/actions-setup-redis@v1
+      with:
+        auto-start: "false"
+    - run: ./jobs/slack-notify-code-morning.sh
+    env:
+      SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      SLACK_CHANNEL: C0TUQGY83 #random
