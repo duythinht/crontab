@@ -4,6 +4,25 @@ function chatgpt.fmt.message { #data
     __chatgpt_build_message "$1" | jq .choices[0].message.content -r
 }
 
+function chatgpt.fmt.good_morning {
+    content="viết nội dung thật ngắn, mời mọi người vào #music để nghe nhạc, bắt đầu bằng 'chào buổi sáng, cốt chưa anh em?'"
+
+    curl https://api.openai.com/v1/chat/completions \
+        -H "Content-Type: application/json" \
+        -H "Authorization: Bearer $OPENAI_API_KEY" \
+        -d  @- << EOF
+{
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {
+            "role": "user",
+            "content": "$content"
+        }
+    ]
+}
+EOF
+}
+
 function __chatgpt_build_message { #data
     price_1h_percent=$(echo $1 | jq .market_data.price_change_percentage_1h_in_currency.usd)
     price_24h_percent=$(echo $1 | jq .market_data.price_change_percentage_24h_in_currency.usd)
