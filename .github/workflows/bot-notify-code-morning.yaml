@@ -1,7 +1,7 @@
 name: "Slack notify webu code at morning"
 on:
   schedule:
-  - cron: "0 2 * * *" # 2:00 UTC to UTC+7 = 9:00
+  - cron: "0 2 * * 1-5" # 2:00 UTC to UTC+7 = 9:00
 
 jobs:
   notify-ronin-at-time-gfbaby:
