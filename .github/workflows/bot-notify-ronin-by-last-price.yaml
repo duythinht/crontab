@@ -16,7 +16,7 @@ jobs:
         auto-start: "false"
     - run: ./jobs/ronin-notify-by-last-price.sh
     env:
-      TELEGRAM_CHAT_ID: '-1002230238098,-999154067,-1001913309928,-1001975847080' # be, sm-sre, bot
+      TELEGRAM_CHAT_ID: '-999154067,-1001913309928' # be, sm-sre, bot
       NOTIFY_PERCENT: '5.0'
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       REDIS_ADDR: ${{ secrets.REDIS_ADDR }}
